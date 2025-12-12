@@ -47,6 +47,11 @@ DON_environment_disableAnimals = true;   // false = deja animales
 DON_environment_keepSounds     = true;   // true  = mantiene sonidos
 
 // ===============================
+// GRAD FORTIFICATIONS
+// ===============================
+DON_fortifications_enabled = false;  // Activa el wrapper del módulo (requiere DON_ENABLE_GRAD_FORTIFICATIONS=1)
+
+// ===============================
 // DIARIO "LOS AHMED"
 // ===============================
 DON_diary_enabled = true;

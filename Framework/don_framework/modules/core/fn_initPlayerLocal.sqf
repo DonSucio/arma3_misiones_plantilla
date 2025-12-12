@@ -10,6 +10,9 @@ missionNamespace setVariable ["DON_clientInited", true];
 // Carga config editable
 [] call DON_fnc_loadConfig;
 
+// GRAD Fortifications (wrapper y chequeos)
+[] call DON_fnc_initFortifications;
+
 // Módulos (activa/desactiva desde don_config.sqf)
 if (missionNamespace getVariable ["DON_whitelist_enabled", true]) then {
     [] call DON_fnc_enforceSlotWhitelist;

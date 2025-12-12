@@ -12,6 +12,9 @@ missionNamespace setVariable ["DON_serverInited", true];
 
 [] call DON_fnc_loadConfig;
 
+// GRAD Fortifications (wrapper y chequeos)
+[] call DON_fnc_initFortifications;
+
 // Array global de objetivos emergentes (si lo usas en scripts)
 if (isNil "popTargets") then {
     popTargets = [];

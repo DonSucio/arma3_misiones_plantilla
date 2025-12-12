@@ -31,6 +31,7 @@ Tu config vive aquí:
 
 - `don_framework/third_party/grad/cfgGradPersistence.hpp`
 - `don_framework/third_party/grad/gradPersistence_blacklist.hpp` (tu lista gigante)
+- `don_framework/third_party/grad/cfgGradFortifications.hpp` (si activas fortificaciones)
 
 Está montado para que el framework lo "inyecte" en el `description.ext` cuando el módulo está habilitado.
 

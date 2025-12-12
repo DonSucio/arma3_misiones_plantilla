@@ -51,6 +51,11 @@ class CfgFunctions {
             class applyClientEnvironment {};
         };
 
+        class fortifications {
+            file = "don_framework\modules\fortifications";
+            class initFortifications {};
+        };
+
         class diary_los_ahmed {
             file = "don_framework\modules\diary_los_ahmed";
             class diaryLosAhmed {};
