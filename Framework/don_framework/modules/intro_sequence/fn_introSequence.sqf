@@ -25,10 +25,24 @@ if (
     [] spawn DON_fnc_introRP;
 };
 
-// Cámara sobre ruta declarativa
+// Cámara sobre ruta capturada (unitPlay)
 private _routeName = missionNamespace getVariable ["DON_intro_sequence_routeName", ""];
 if (!(_routeName isEqualTo "")) then {
-    private _segmentTime = missionNamespace getVariable ["DON_intro_sequence_segmentTime", 8];
-    private _target = missionNamespace getVariable ["DON_intro_sequence_cameraTarget", objNull];
-    [_routeName, _segmentTime, _target] spawn DON_fnc_playCameraRoute;
+    private _loop = missionNamespace getVariable ["DON_intro_sequence_loop", false];
+    private _timeShift = missionNamespace getVariable ["DON_intro_sequence_timeShift", 0];
+
+    [_routeName, _loop, _timeShift] spawn {
+        params ["_routeName", "_loop", "_timeShift"]; // captura de variables externas
+        private _cam = "camera" camCreate [0,0,0];
+        _cam cameraEffect ["internal", "back"];
+        _cam camCommit 0;
+
+        private _handle = [_cam, _routeName, _loop, _timeShift] call DON_fnc_ucPlayOnOwner;
+        waitUntil {
+            uiSleep 0.1;
+            isNull _cam || { scriptDone _handle }
+        };
+        _cam cameraEffect ["terminate", "back"];
+        camDestroy _cam;
+    };
 };

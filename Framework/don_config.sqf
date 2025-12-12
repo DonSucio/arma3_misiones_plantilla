@@ -31,11 +31,10 @@ DON_intro_body_lines = [
 DON_intro_sequence_enabled = false;         // Activa la intro con cámara + música
 DON_intro_sequence_playRP  = true;          // Llama también a la intro RP anterior
 
-// Cámara: recorre una ruta declarada en DON_routes_definitions (ver abajo)
-DON_intro_sequence_routeName   = "";       // Ej: "intro_cam_route"
-DON_intro_sequence_segmentTime = 8;         // Segundos por tramo de cámara
-// Opcional: a qué mirar (objeto, posición [x,y,z] o marker)
-// DON_intro_sequence_cameraTarget = "mrk_intro_target";
+// Cámara: recorre una ruta capturada declarada en DON_unitCapture_routes
+DON_intro_sequence_routeName   = "";       // Ej: "intro_cam"
+DON_intro_sequence_loop        = false;     // Repite la ruta de cámara
+DON_intro_sequence_timeShift   = 0;         // Recorte del arranque (segundos)
 
 // Música: usa una clase de CfgMusic definida en description.ext
 DON_intro_music_enabled = false;
@@ -77,14 +76,15 @@ DON_diary_enabled = true;
 
 
 // ===============================
-// RUTAS (cámara/vehículos/IA)
+// UNIT CAPTURE (BIS_fnc_unitPlay)
 // ===============================
-DON_routes_enabled = false;
-// Formato: ["nombreRuta", ["mrk1","mrk2", [1234,5678,0]], loop?, radio]
-DON_routes_definitions = [
-    // ["intro_cam_route", ["mrk_cam_1", "mrk_cam_2", "mrk_cam_3"], true, 5]
+DON_unitCapture_enabled = false;
+DON_unitCapture_defaultLoop = false; // loop por defecto si no se especifica en cada ruta
+// Formato: ["nombre", "rutaSQF", loop?, timeShiftSegundos]
+DON_unitCapture_routes = [
+    // ["lb1_lead", "Halloween/HALLOWEEN_2025_dia2.chernarusredux/paths/lb1_lead.sqf", false, 0],
+    // ["lb2_lead", "Halloween/HALLOWEEN_2025_dia2.chernarusredux/paths/lb2_lead.sqf"]
 ];
-
 
 
 // ===============================

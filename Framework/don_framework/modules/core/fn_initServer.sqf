@@ -12,8 +12,8 @@ missionNamespace setVariable ["DON_serverInited", true];
 
 [] call DON_fnc_loadConfig;
 
-// Rutas declarativas (IA/vehículos)
-[] call DON_fnc_registerRoutes;
+// Rutas capturadas (IA/vehículos/cámara)
+[] call DON_fnc_ucRegisterRoutes;
 
 // GRAD Fortifications (wrapper y chequeos)
 [] call DON_fnc_initFortifications;

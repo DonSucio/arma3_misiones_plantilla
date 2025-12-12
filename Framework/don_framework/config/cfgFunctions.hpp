@@ -40,7 +40,6 @@ class CfgFunctions {
             file = "don_framework\modules\intro_sequence";
             class introSequence {};
             class playLoopMusic {};
-            class playCameraRoute {};
         };
 
         class whitelist {
@@ -53,11 +52,15 @@ class CfgFunctions {
             class lockThirdPersonBySlot {};
         };
 
-        class routes {
-            file = "don_framework\modules\routes";
-            class registerRoutes {};
-            class attachUnitToRoute {};
-            class getRoute {};
+        class unit_capture {
+            file = "don_framework\modules\unit_capture";
+            class ucRegisterRoutes {};
+            class ucLoadRouteFromFile {};
+            class ucResolveObject {};
+            class ucPlayOnOwner {};
+            class ucPlay {}; // alias legacy
+            class ucAddLaptopActions {};
+            class ucStop {};
         };
 
         class environment {
