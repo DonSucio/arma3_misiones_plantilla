@@ -26,6 +26,24 @@ DON_intro_body_lines = [
 // DON_intro_body_html = "<t align='center'>Texto con <br/> saltos</t>";
 
 // ===============================
+// INTRO CINEMÁTICA + MÚSICA
+// ===============================
+DON_intro_sequence_enabled = false;         // Activa la intro con cámara + música
+DON_intro_sequence_playRP  = true;          // Llama también a la intro RP anterior
+
+// Cámara: recorre una ruta capturada declarada en DON_unitCapture_routes
+DON_intro_sequence_routeName   = "";       // Ej: "intro_cam"
+DON_intro_sequence_loop        = false;     // Repite la ruta de cámara
+DON_intro_sequence_timeShift   = 0;         // Recorte del arranque (segundos)
+
+// Música: usa una clase de CfgMusic definida en description.ext
+DON_intro_music_enabled = false;
+DON_intro_music_track   = "";              // Clase de CfgMusic (ej: "DON_HalloweenTheme")
+DON_intro_music_volume  = 1;                // 0-1
+DON_intro_music_fadeIn  = 3;                // Segundos de fundido de entrada
+DON_intro_music_loop    = true;             // Repite al terminar
+
+// ===============================
 // WHITELIST POR SLOT
 // ===============================
 DON_whitelist_enabled = true;
@@ -47,10 +65,26 @@ DON_environment_disableAnimals = true;   // false = deja animales
 DON_environment_keepSounds     = true;   // true  = mantiene sonidos
 
 // ===============================
+// GRAD FORTIFICATIONS
+// ===============================
+DON_fortifications_enabled = false;  // Activa el wrapper del módulo (requiere DON_ENABLE_GRAD_FORTIFICATIONS=1)
+
+// ===============================
 // DIARIO "LOS AHMED"
 // ===============================
 DON_diary_enabled = true;
 
+
+// ===============================
+// UNIT CAPTURE (BIS_fnc_unitPlay)
+// ===============================
+DON_unitCapture_enabled = false;
+DON_unitCapture_defaultLoop = false; // loop por defecto si no se especifica en cada ruta
+// Formato: ["nombre", "rutaSQF", loop?, timeShiftSegundos]
+DON_unitCapture_routes = [
+    // ["lb1_lead", "Halloween/HALLOWEEN_2025_dia2.chernarusredux/paths/lb1_lead.sqf", false, 0],
+    // ["lb2_lead", "Halloween/HALLOWEEN_2025_dia2.chernarusredux/paths/lb2_lead.sqf"]
+];
 
 
 // ===============================

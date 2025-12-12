@@ -20,6 +20,10 @@ Esta carpeta es una **plantilla** para misiones de Arma 3 con un mini-framework 
 - Regístralo en `don_framework\config\cfgFunctions.hpp`
 - (Si tiene UI) incluye su .hpp dentro de `don_framework\config\rscTitles.hpp`
 
+## Módulos incluidos (propios)
+- `intro_sequence`: intro con cámara capturada y música en bucle (toggle en `don_config.sqf`).
+- `unit_capture`: carga/reproducción de rutas `BIS_fnc_unitCapture` (LB/cámara/IA) y acciones en portátiles `DON_uc_actions`.
+
 ## Módulos de terceros (GRAD)
 
 Los toggles están en:

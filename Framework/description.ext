@@ -29,5 +29,8 @@
 #include "don_framework\config\rscTitles.hpp"
 #include "don_framework\config\cfgFunctions.hpp"
 
+// Config de GRAD Fortifications (si está habilitado)
+#include "don_framework\third_party\grad\cfgGradFortifications.hpp"
+
 // Config de GRAD Persistence (si está habilitado)
 #include "don_framework\third_party\grad\cfgGradPersistence.hpp"
