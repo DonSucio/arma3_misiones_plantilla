@@ -36,6 +36,13 @@ class CfgFunctions {
             class introRP {};
         };
 
+        class intro_sequence {
+            file = "don_framework\modules\intro_sequence";
+            class introSequence {};
+            class playLoopMusic {};
+            class playCameraRoute {};
+        };
+
         class whitelist {
             file = "don_framework\modules\whitelist";
             class enforceSlotWhitelist {};
@@ -46,9 +53,21 @@ class CfgFunctions {
             class lockThirdPersonBySlot {};
         };
 
+        class routes {
+            file = "don_framework\modules\routes";
+            class registerRoutes {};
+            class attachUnitToRoute {};
+            class getRoute {};
+        };
+
         class environment {
             file = "don_framework\modules\environment";
             class applyClientEnvironment {};
+        };
+
+        class fortifications {
+            file = "don_framework\modules\fortifications";
+            class initFortifications {};
         };
 
         class diary_los_ahmed {
