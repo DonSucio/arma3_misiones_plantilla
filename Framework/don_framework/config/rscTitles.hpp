@@ -82,4 +82,11 @@ class RscTitles {
         };
     };
 
+    // --- GRAD Fortifications hint UI (opcional) ---
+    // OJO: rutas relativas desde don_framework\config\ -> raíz de misión (..\..)
+    #include "don_defines.hpp"
+    #if DON_ENABLE_GRAD_FORTIFICATIONS
+        #include "..\..\modules\grad-fortifications\dialog\hint\title.hpp"
+    #endif
+
 };

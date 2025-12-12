@@ -9,6 +9,25 @@
     Todo lo demás vive en don_framework\...
 */
 
+// ------------------------------------------------------
+// DON Framework (plantilla)
+//
+// IMPORTANTE:
+//  - Togglets (1/0) de módulos de terceros: don_framework\config\don_defines.hpp
+//  - Meta de misión (nombre/imagen): don_missionMeta.hpp
+// ------------------------------------------------------
+
+#include "don_framework\config\don_defines.hpp"
+
+// Includes de terceros (GRAD, etc.)
+#include "don_framework\third_party\grad\grad_includes.hpp"
+
+// Tu meta de misión (fácil de editar)
 #include "don_missionMeta.hpp"
+
+// Framework core
 #include "don_framework\config\rscTitles.hpp"
 #include "don_framework\config\cfgFunctions.hpp"
+
+// Config de GRAD Persistence (si está habilitado)
+#include "don_framework\third_party\grad\cfgGradPersistence.hpp"

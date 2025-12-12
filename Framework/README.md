@@ -19,3 +19,16 @@ Esta carpeta es una **plantilla** para misiones de Arma 3 con un mini-framework 
 - Crea `don_framework\modules\<modulo>\fn_algo.sqf` + `README.md`
 - Regístralo en `don_framework\config\cfgFunctions.hpp`
 - (Si tiene UI) incluye su .hpp dentro de `don_framework\config\rscTitles.hpp`
+
+## Módulos de terceros (GRAD)
+
+Los toggles están en:
+
+- `don_framework/config/don_defines.hpp`
+
+Y los módulos (si los usas) van en:
+
+- `modules/grad-persistence/...`
+- `modules/grad-fortifications/...`
+
+Docs: `don_framework/third_party/grad/README.md`

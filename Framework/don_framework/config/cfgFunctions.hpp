@@ -6,6 +6,18 @@
 */
 
 class CfgFunctions {
+
+    // --- Third party (GRAD, etc.) ---
+    // OJO: rutas relativas desde don_framework\config\ -> raíz de misión (..\..)
+    #include "don_defines.hpp"
+
+    #if DON_ENABLE_GRAD_PERSISTENCE
+        #include "..\..\modules\grad-persistence\cfgFunctions.hpp"
+    #endif
+
+    #if DON_ENABLE_GRAD_FORTIFICATIONS
+        #include "..\..\modules\grad-fortifications\cfgFunctions.hpp"
+    #endif
     class DON {
         tag = "DON";
 
