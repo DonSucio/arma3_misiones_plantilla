@@ -10,6 +10,9 @@ missionNamespace setVariable ["DON_clientInited", true];
 // Carga config editable
 [] call DON_fnc_loadConfig;
 
+// Rutas declarativas (cámara, IA, vehículos)
+[] call DON_fnc_registerRoutes;
+
 // GRAD Fortifications (wrapper y chequeos)
 [] call DON_fnc_initFortifications;
 
@@ -24,8 +27,12 @@ if (missionNamespace getVariable ["DON_thirdPersonLock_enabled", true]) then {
     [] call DON_fnc_lockThirdPersonBySlot;
 };
 
-if (missionNamespace getVariable ["DON_intro_enabled", true]) then {
-    [] call DON_fnc_introRP;
+if (missionNamespace getVariable ["DON_intro_sequence_enabled", false]) then {
+    [] call DON_fnc_introSequence;
+} else {
+    if (missionNamespace getVariable ["DON_intro_enabled", true]) then {
+        [] call DON_fnc_introRP;
+    };
 };
 
 if (missionNamespace getVariable ["DON_diary_enabled", true]) then {
