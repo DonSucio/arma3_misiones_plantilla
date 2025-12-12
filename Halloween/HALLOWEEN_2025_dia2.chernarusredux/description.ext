@@ -1,0 +1,92 @@
+// === Día 2 — Umbrella Operación Eclipse ===
+// Intro + música (loop 15m) + sistema LB
+
+// -------------------- UI INTRO --------------------
+class RscTitles {
+  class Default { idd = -1; fadein = 0; fadeout = 0; duration = 0; };
+
+  class UMB_Intro {
+    idd = -1;
+    duration = 1e10;
+    movingEnable = 0;
+    onLoad = "uiNamespace setVariable ['UMB_Intro', _this select 0]";
+    fadein = 0; fadeout = 0;
+
+    class controls {
+      class UMB_BG {
+        idc = 1000; type = 0; style = 0;
+        x = safeZoneX; y = safeZoneY; w = safeZoneW; h = safeZoneH;
+        colorBackground[] = {0,0,0,1};
+        colorText[] = {0,0,0,0}; text = "";
+        font = "PuristaMedium"; sizeEx = 0;
+      };
+      class UMB_Logo {
+        idc = 1001; type = 0; style = 48; // RscPicture
+        text = "umbrella_logo.jpg";
+        x = safeZoneX; y = safeZoneY; w = safeZoneW; h = safeZoneH;
+        colorBackground[] = {0,0,0,0};
+        colorText[] = {1,1,1,0.22};
+        font = "TahomaB"; sizeEx = 0;
+      };
+      class UMB_Title {
+        idc = 1003; type = 13; style = 0; // RscStructuredText
+        x = safeZoneX + safeZoneW*0.08;
+        y = safeZoneY + safeZoneH*0.15;
+        w = safeZoneW*0.84; h = safeZoneH*0.14;
+        text = "";
+        size = 0.06; shadow = 0;
+        colorBackground[] = {0,0,0,0};
+        class Attributes { align = "center"; color = "#FFFFFF"; font = "PuristaSemibold"; };
+      };
+      class UMB_Body {
+        idc = 1004; type = 13; style = 0; // RscStructuredText
+        x = safeZoneX + safeZoneW*0.10;
+        y = safeZoneY + safeZoneH*0.30;
+        w = safeZoneW*0.80; h = safeZoneH*0.52;
+        text = "";
+        size = 0.05; shadow = 0;
+        colorBackground[] = {0,0,0,0};
+        class Attributes { align = "center"; color = "#DADADA"; font = "PuristaLight"; };
+      };
+    };
+  };
+};
+
+// -------------------- Música --------------------
+class CfgMusicClasses { class UMB_Mission { displayName = "Umbrella (Misión)"; }; };
+class CfgMusic {
+  tracks[] = {};
+  class umb_intro_music { name = "umb_intro_music"; sound[] = {"intro.ogg", db+0, 1.0}; };
+  class umb_chill_15_00 { name = "UMB — 15:00 medio tensión"; sound[] = {"15min_mediotension.ogg", db+0, 1}; };
+};
+
+// -------------------- Loading screen / mundo --------------------
+class CfgWorlds {
+  class ChernarusRedux {
+    description="UMBRELLA - OPERACIÓN ECLIPSE - DÍA 2";
+    author="Mamadu y Zick";
+    pictureMap = "umbrella_logo.jpg";
+    loadingTexts[] = {"¡Feliz Juagüelin, grupo!"};
+  };
+};
+
+// -------------------- RemoteExec (LB + música) --------------------
+class CfgRemoteExec {
+  class Functions {
+    mode = 2; jip = 1;
+
+    // cliente → servidor (lanzar las rutas)
+    class UMB_fnc_startLB1234  { allowedTargets = 2; };
+
+    // utilidades (efecto local donde sea el propietario del vehículo)
+    class UMB_fnc_engineOnlyLB    { allowedTargets = 0; };
+    class UMB_fnc_runLB_localKey  { allowedTargets = 0; };
+
+    // música: esta función se ejecuta SOLO en clientes (JIP habilitado)
+    class UMB_fnc_musicPlay       { allowedTargets = 1; jip = 1; };
+  };
+  class Commands {
+    mode = 2; jip = 1;
+    // Sin systemChat ni hint (no debug en pantalla)
+  };
+};
