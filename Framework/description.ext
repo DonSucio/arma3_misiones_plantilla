@@ -1,0 +1,14 @@
+/*
+    description.ext (plantilla)
+    ---------------------------
+    Idea: NO tocar este fichero en cada misión.
+    Lo único editable por "gente que no sabe" debería ser:
+      - don_missionMeta.hpp   (nombre/imagen de misión y pantallas de carga)
+      - don_config.sqf        (textos y toggles)
+
+    Todo lo demás vive en don_framework\...
+*/
+
+#include "don_missionMeta.hpp"
+#include "don_framework\config\rscTitles.hpp"
+#include "don_framework\config\cfgFunctions.hpp"
