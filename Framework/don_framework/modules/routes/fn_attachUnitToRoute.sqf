@@ -14,8 +14,18 @@ params [
 if (isNull _unit) exitWith {};
 if (_routeName isEqualTo "") exitWith {};
 
+if (_options isEqualType []) then {
+    private _map = createHashMap;
+    for [{_i = 0}, {_i < (count _options) - 1}, {_i = _i + 2}] do {
+        private _key = _options # _i;
+        private _val = _options # (_i + 1);
+        if (_key isEqualType "") then { _map set [_key, _val]; };
+    };
+    _options = _map;
+};
+
 if (!local _unit) exitWith {
-    [_unit, _routeName, _options] remoteExec ["DON_fnc_attachUnitToRoute", _unit];
+    [_unit, _routeName, _options] remoteExecCall ["DON_fnc_attachUnitToRoute", owner _unit];
 };
 
 private _route = [_routeName] call DON_fnc_getRoute;

@@ -1,6 +1,6 @@
 # routes
 
-Sistema declarativo de rutas reutilizables para cámara o unidades.
+Sistema declarativo de rutas reutilizables para cámara o unidades. **No es UnitCapture** (las capturas viven en `unit_capture/`).
 
 ## Config (don_config.sqf)
 - `DON_routes_enabled` (bool): activa el registro.
@@ -21,7 +21,8 @@ DON_routes_definitions = [
 
 ## Helpers
 - `[] call DON_fnc_registerRoutes;` — normaliza las rutas (lo hace el init del framework).
-- `[unit, "intro_cam_route", ["loop", false, "radius", 6]] call DON_fnc_attachUnitToRoute;`
+- `[unit, "intro_cam_route", ["loop", false, "radius", 6]] call DON_fnc_attachUnitToRoute;` — `_options` puede ser
+  HashMap **o** array de pares clave/valor.
 - `[_routeName] call DON_fnc_getRoute;` — devuelve el HashMap con `points/loop/radius/speed`.
 
 ## Uso rápido (Eden)
@@ -30,4 +31,4 @@ DON_routes_definitions = [
    ```sqf
    [this, "patrol_zombies"] call DON_fnc_attachUnitToRoute;
    ```
-3. Si quieres usar la ruta para la intro de cámara, referencia `DON_intro_sequence_routeName`.
+3. Si no es local, el wrapper la reenvía al owner automáticamente antes de hacer `doMove`.
