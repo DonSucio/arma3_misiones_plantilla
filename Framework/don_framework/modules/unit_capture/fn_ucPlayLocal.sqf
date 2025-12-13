@@ -13,6 +13,7 @@ if (!local _obj) exitWith { scriptNull };
 private _route = [];
 private _loopDefault = missionNamespace getVariable ["DON_unitCapture_defaultLoop", false];
 private _timeShiftDefault = 0;
+private _prepareVehicles = missionNamespace getVariable ["DON_unitCapture_prepareVehicles", false];
 
 if (_routeRef isEqualType "") then {
     private _routes = missionNamespace getVariable ["DON_uc_routes", createHashMap];
@@ -63,6 +64,22 @@ if (_shift > 0) then {
 };
 
 if !(_routeToPlay isEqualType [] && {count _routeToPlay >= 2}) exitWith { scriptNull };
+
+if (_prepareVehicles) then {
+    [_obj] call {
+        params ["_veh"];
+        if (isNull _veh) exitWith {};
+        if !(_veh isKindOf "AllVehicles") exitWith {};
+        _veh engineOn true;
+        _veh setFuel 1;
+        _veh setDamage 0;
+        _veh disableAI "MOVE";
+        _veh disableAI "TARGET";
+        _veh disableAI "AUTOTARGET";
+        _veh setBehaviour "CARELESS";
+        _veh setCombatMode "BLUE";
+    };
+};
 
 private _prev = _obj getVariable ["DON_uc_handle", scriptNull];
 if (!isNull _prev) then { terminate _prev; };
