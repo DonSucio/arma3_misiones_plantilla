@@ -40,9 +40,10 @@ private _fnc_normalizeEntry = {
 
     // Compat: [title, targetRef, route, loop?, timeShift?, startDelay?]
     if ((count _x) >= 3 && {!((_x#1) isEqualType [])}) then {
-        _x params ["_titleCmp", "_targetRef", "_routeName", ["_loopCmp", nil], ["_timeShiftCmp", nil], ["_delayCmp", 0]];
+        _x params ["_titleCmp", "_targetRef", "_routeName", ["_loopCmp", nil], ["_timeShiftCmp", nil], ["_delayCmp", 0], ["_modeCmp", "play"]];
         _title = _titleCmp;
         _batch = [[_targetRef, _routeName, _loopCmp, _timeShiftCmp, _delayCmp]];
+        if (_modeCmp isEqualType "") then { _mode = toLower _modeCmp; };
     } else {
         _x params ["_titleCfg", ["_batchCfg", []], ["_modeCfg", "play"]];
         _title = _titleCfg;

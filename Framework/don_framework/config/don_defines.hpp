@@ -20,3 +20,10 @@
 
 // GRAD Fortifications (necesario si usas saveGradFortificationsStatics y/o su hint UI)
 #define DON_ENABLE_GRAD_FORTIFICATIONS 0
+
+// ==============================
+// RemoteExec whitelist (opcional)
+// ==============================
+// Incluye don_framework/config/cfgRemoteExec.hpp si usas mode=2 y quieres solo whitelists básicos del framework.
+// Ponlo a 1 si NO tienes ya tu propio CfgRemoteExec en la misión.
+#define DON_INCLUDE_REMOTEEXEC_CONFIG 0
