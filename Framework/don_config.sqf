@@ -80,6 +80,7 @@ DON_diary_enabled = true;
 // ===============================
 DON_unitCapture_enabled = false;
 DON_unitCapture_defaultLoop = false; // loop por defecto si no se especifica en cada ruta
+DON_unitCapture_prepareVehicles = true; // prepara vehículos antes de unitPlay (motor, fuel, IA off) si está activo
 // Formato: ["nombre", "rutaSQF", loop?, timeShiftSegundos]
 DON_unitCapture_routes = [
     // ["lb1_lead", "Halloween/HALLOWEEN_2025_dia2.chernarusredux/paths/lb1_lead.sqf", false, 0],

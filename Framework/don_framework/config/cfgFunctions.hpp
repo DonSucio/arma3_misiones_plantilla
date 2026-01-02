@@ -57,9 +57,11 @@ class CfgFunctions {
             class ucRegisterRoutes {};
             class ucLoadRouteFromFile {};
             class ucResolveObject {};
+            class ucPlayLocal {};
             class ucPlayOnOwner {};
             class ucPlay {}; // alias legacy
             class ucAddLaptopActions {};
+            class ucDispatchFromLaptop {};
             class ucStop {};
         };
 

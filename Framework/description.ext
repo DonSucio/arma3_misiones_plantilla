@@ -29,6 +29,11 @@
 #include "don_framework\config\rscTitles.hpp"
 #include "don_framework\config\cfgFunctions.hpp"
 
+// RemoteExec (opcional). Actívalo con DON_INCLUDE_REMOTEEXEC_CONFIG=1 en don_defines.hpp si usas mode=2 sin whitelist propia.
+#if DON_INCLUDE_REMOTEEXEC_CONFIG
+    #include "don_framework\config\cfgRemoteExec.hpp"
+#endif
+
 // Config de GRAD Fortifications (si está habilitado)
 #include "don_framework\third_party\grad\cfgGradFortifications.hpp"
 
