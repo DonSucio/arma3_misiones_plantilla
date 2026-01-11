@@ -1,0 +1,40 @@
+class CfgSounds
+{
+ sounds[] = {};
+ class nvg
+ {
+  name = "nvg";
+  sound[] = {"sound\nvg.ogg", 1,1};
+  titles[] = {};
+ };
+  
+   class neg
+ {
+ name = "neg";
+ sound[] = {"sound\neg.ogg", 1,1};
+ titles[] = {};
+ };
+ 
+   class gch
+ {
+ name = "gch";
+ sound[] = {"sound\gch.ogg", 1,1};
+ titles[] = {};
+ };
+
+   class jbl
+ {
+ name = "jbl";
+ sound[] = {"sound\jbl.ogg", 1,1};
+ titles[] = {};
+ };
+}
+
+class CfgWorlds {
+  class zimma {
+    description="[CRONOS] ESPECIAL NAVIDAD 2026";
+    author="Mamad";
+    pictureMap = "pantallacarga.jpg";
+    loadingTexts[] = {"Lema de cronos: ¿Hoy se hace algo?"};
+  };
+};

@@ -1,0 +1,1 @@
+enableSentences false;        // corta muchas frases “ambientales”/radio
